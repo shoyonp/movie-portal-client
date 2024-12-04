@@ -1,13 +1,20 @@
+import { NavLink } from "react-router-dom";
+
 const Navbar = () => {
   const links = (
     <>
-      <li>
-        <a>Item 1</a>
-      </li>
-
-      <li>
-        <a>Item 3</a>
-      </li>
+      <NavLink to="/">
+        <li>Home</li>
+      </NavLink>
+      <NavLink to="allmovies">
+        <li>All Movies</li>
+      </NavLink>
+      <NavLink to="addmovie">
+        <li>Add Movie</li>
+      </NavLink>
+      <NavLink to="new">
+        <li>New</li>
+      </NavLink>
     </>
   );
   return (
@@ -43,7 +50,7 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        <NavLink to="/auth/login"> login</NavLink>
       </div>
     </div>
   );
