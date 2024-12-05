@@ -1,10 +1,19 @@
 import { useEffect, useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import {
+  data,
+  Link,
+  Navigate,
+  useLoaderData,
+  useNavigate,
+  useParams,
+} from "react-router-dom";
+import Swal from "sweetalert2";
 
 const MovieDetails = () => {
   const movies = useLoaderData();
   const { id } = useParams();
   const [movie, setMovie] = useState({});
+  const navigate = useNavigate();
 
   useEffect(() => {
     const oneMovie = movies && movies?.find((m) => m._id == id);
@@ -17,7 +26,35 @@ const MovieDetails = () => {
 
   const handleDelete = (_id) => {
     console.log(_id);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/movies/${_id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your Movie has been deleted.",
+                icon: "success",
+              });
+              navigate("/allmovies");
+            }
+          });
+      }
+    });
   };
+
   return (
     <div className="w-11/12 mx-auto">
       <div className="card bg-base-100 shadow-xl">
@@ -34,7 +71,9 @@ const MovieDetails = () => {
             Delete Movie
           </button>
           <button className="btn btn-warning">Add to Favorite</button>
-          <button className="btn btn-neutral">Update Movie</button>
+          <Link to="/updatemovie" className="btn btn-neutral">
+            Update Movie
+          </Link>
         </div>
       </div>
     </div>
