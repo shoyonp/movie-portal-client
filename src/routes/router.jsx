@@ -9,6 +9,7 @@ import Register from "../pages/Register";
 import Home from "../pages/Home";
 import AddMovie from "../pages/AddMovie";
 import UpdateMovie from "../pages/UpdateMovie";
+import MovieDetails from "../pages/MovieDetails";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,11 @@ const router = createBrowserRouter([
         path: "new",
         element: <New></New>,
       },
+      {
+        path:"/detail/:id",
+        element:<MovieDetails></MovieDetails>,
+        loader: () => fetch("http://localhost:5000/movies")
+      }
     ],
   },
   {
