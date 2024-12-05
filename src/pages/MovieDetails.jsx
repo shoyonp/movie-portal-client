@@ -11,10 +11,13 @@ const MovieDetails = () => {
     setMovie(oneMovie);
   }, [id, movies]);
 
-  const { name, photo, genre, duration, releaseYear ,summary} = movie;
+  const { _id, name, photo, genre, duration, releaseYear, summary } = movie;
 
-//   console.log(movie);
+  //   console.log(movie);
 
+  const handleDelete = (_id) => {
+    console.log(_id);
+  };
   return (
     <div className="w-11/12 mx-auto">
       <div className="card bg-base-100 shadow-xl">
@@ -27,7 +30,9 @@ const MovieDetails = () => {
           <p>{duration}</p>
           <div>{releaseYear}</div>
           <div className="card-actions justify-end">{summary}</div>
-          <button className="btn btn-primary">Delete Movie</button>
+          <button onClick={() => handleDelete(_id)} className="btn btn-primary">
+            Delete Movie
+          </button>
           <button className="btn btn-warning">Add to Favorite</button>
           <button className="btn btn-neutral">Update Movie</button>
         </div>

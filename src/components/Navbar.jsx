@@ -16,6 +16,9 @@ const Navbar = () => {
       <NavLink to="addmovie">
         <li>Add Movie</li>
       </NavLink>
+      <NavLink to="myfavorite">
+        <li>My Favorites</li>
+      </NavLink>
       <NavLink to="new">
         <li>New</li>
       </NavLink>
