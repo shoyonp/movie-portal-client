@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import {
-  data,
   Link,
-  Navigate,
   useLoaderData,
   useNavigate,
   useParams,
@@ -71,7 +69,7 @@ const MovieDetails = () => {
             Delete Movie
           </button>
           <button className="btn btn-warning">Add to Favorite</button>
-          <Link to="/updatemovie" className="btn btn-neutral">
+          <Link to={`/updatemovie/${_id}`} className="btn btn-neutral">
             Update Movie
           </Link>
         </div>
