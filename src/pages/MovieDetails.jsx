@@ -88,7 +88,9 @@ const MovieDetails = () => {
           <img src={photo} alt="Movie" className="h-full" />
         </figure>
         <div className="card-body">
-          <h2 className="card-title font-extrabold text-white text-2xl">{name}</h2>
+          <h2 className="card-title font-extrabold text-white text-2xl">
+            {name}
+          </h2>
           <h3 className="font-medium  text-[#B3B3B3]">{genre}</h3>
           <span className="font-medium text-[#B3B3B3]">{duration} min</span>
           <div className="font-medium text-[#B3B3B3]">
@@ -118,6 +120,7 @@ const MovieDetails = () => {
             >
               Update Movie
             </Link>
+            <Link to="/allmovies" className="btn w-full transition-transform transform hover:scale-105">See all movies</Link>
           </div>
         </div>
       </div>
