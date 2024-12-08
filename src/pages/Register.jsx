@@ -4,6 +4,7 @@ import { AuthContext } from "../provider/AuthProvider";
 
 const Register = () => {
   const { creatNewUser, setUser, updateUserProfile } = useContext(AuthContext);
+
   const navigate = useNavigate();
   const [error, setError] = useState("");
   const handleSubmit = (e) => {
@@ -33,22 +34,13 @@ const Register = () => {
       .then((result) => {
         const user = result.user;
         setUser(user);
-      console.log(user);
-
-        updateUserProfile({ displayName: name, photoURL: photo })
-          .then(() => {
-            navigate("/");
-          })
-          .catch((error) => {
-            console.log(error);
-          });
+        console.log(user);
       })
       .catch((error) => {
         console.log(error.message);
         setError(error.message);
       });
   };
-
 
   // const handleGoogleSignIn = () => {
   //   signInWithPopup(auth, googleLogin())

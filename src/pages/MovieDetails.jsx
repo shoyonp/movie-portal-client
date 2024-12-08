@@ -1,16 +1,14 @@
-import { useEffect, useState } from "react";
-import {
-  Link,
-  useLoaderData,
-  useNavigate,
-  useParams,
-} from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { Link, useLoaderData, useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../provider/AuthProvider";
 
 const MovieDetails = () => {
   const movies = useLoaderData();
   const { id } = useParams();
   const [movie, setMovie] = useState({});
+  const { user } = useContext(AuthContext);
+  const email = user.email;
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -19,7 +17,7 @@ const MovieDetails = () => {
   }, [id, movies]);
 
   const { _id, name, photo, genre, duration, releaseYear, summary } = movie;
-
+  const userMovie = { name, photo, genre, duration, releaseYear, summary, email };
   //   console.log(movie);
 
   const handleDelete = (_id) => {
@@ -53,6 +51,28 @@ const MovieDetails = () => {
     });
   };
 
+  const handleAddFavoriteMovie = () => {
+    // user movie db
+    fetch("http://localhost:5000/userMovies", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(userMovie),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          Swal.fire({
+            icon: "success",
+            title: "Success!",
+            text: "Movie Added to Favorite",
+            confirmButtonText: "Cool",
+          });
+        }
+      });
+  };
+
   return (
     <div className="w-11/12 mx-auto">
       <div className="card bg-base-100 shadow-xl">
@@ -68,7 +88,10 @@ const MovieDetails = () => {
           <button onClick={() => handleDelete(_id)} className="btn btn-primary">
             Delete Movie
           </button>
-          <button className="btn btn-warning">Add to Favorite</button>
+
+          <button onClick={handleAddFavoriteMovie} className="btn btn-warning">Add to Favorite</button>
+
+
           <Link to={`/updatemovie/${_id}`} className="btn btn-neutral">
             Update Movie
           </Link>

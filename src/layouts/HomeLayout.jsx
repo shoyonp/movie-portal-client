@@ -8,7 +8,7 @@ const HomeLayout = () => {
   const movies = useLoaderData();
   return (
     <div>
-      <nav className="mb-10">
+      <nav className="mb-10 ">
         <Navbar></Navbar>
       </nav>
       <section className="mb-10">

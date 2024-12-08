@@ -1,6 +1,7 @@
-import { useState } from "react";
+import {  useState } from "react";
 import { Rating } from "react-simple-star-rating";
 import Swal from "sweetalert2";
+
 
 const AddMovie = () => {
   //   const [rating, setRating] = useState(0);
@@ -8,6 +9,7 @@ const AddMovie = () => {
   const [summaryError, setSummaryError] = useState("");
   const [durationError, setDurationError] = useState("");
   const [urlError, setUrlError] = useState("");
+
 
   const handleAddMovie = (event) => {
     event.preventDefault();
@@ -54,9 +56,6 @@ const AddMovie = () => {
     }
 
     const newMovie = { name, photo, genre, duration, releaseYear, summary };
-
-    console.log(newMovie);
-
     fetch("http://localhost:5000/movies", {
       method: "POST",
       headers: {
@@ -77,6 +76,7 @@ const AddMovie = () => {
         }
       });
   };
+
 
   //   const handleRating = (rating) => {
   //     setRating(rating);

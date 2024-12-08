@@ -52,7 +52,7 @@ const router = createBrowserRouter([
         element: <New></New>,
       },
       {
-        path: "myfavorite",
+        path: "myfavorite/:email?",
         element: (
           <PrivateRoute>
             <MyFavoriteMovies></MyFavoriteMovies>
