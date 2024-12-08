@@ -9,10 +9,10 @@ svg.star-svg {
 
 body {
   font-family: "Poppins", serif;
-  background-color: #2C2C2C;
+  background-color: #1A1A2E;
 }
 
 .active {
-  background-color: burlywood;
-  border-radius: 10px;
+  background-color: #F9A826;
 }
+

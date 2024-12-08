@@ -1,7 +1,6 @@
-import {  useState } from "react";
+import { useState } from "react";
 import { Rating } from "react-simple-star-rating";
 import Swal from "sweetalert2";
-
 
 const AddMovie = () => {
   //   const [rating, setRating] = useState(0);
@@ -9,7 +8,6 @@ const AddMovie = () => {
   const [summaryError, setSummaryError] = useState("");
   const [durationError, setDurationError] = useState("");
   const [urlError, setUrlError] = useState("");
-
 
   const handleAddMovie = (event) => {
     event.preventDefault();
@@ -77,22 +75,21 @@ const AddMovie = () => {
       });
   };
 
-
   //   const handleRating = (rating) => {
   //     setRating(rating);
   //     console.log(rating);
   //   };
 
   return (
-    <div className="bg-[#F4F3F0] p-24">
-      <h2 className="text-2xl font-bold">Add movies</h2>
+    <div className="bg-[#1C1C1E] p-10 md:p-24 mx-auto">
+      <h2 className="text-2xl font-semibold text-white">Add movies</h2>
       <form onSubmit={handleAddMovie}>
         {/* from row 1*/}
-        <div className="md:flex">
+        <div className="flex flex-col md:flex-row gap-4">
           {/* movie poster */}
-          <div className="form-control md:w-1/2">
-            <label className="label">
-              <span className="label-text">Movie Poster</span>
+          <div className="form-control w-full md:w-1/2">
+            <label className="label ">
+              <span className="label-text text-white">Movie Poster</span>
             </label>
             <label className="input-group">
               <input
@@ -100,16 +97,16 @@ const AddMovie = () => {
                 name="photo"
                 id=""
                 placeholder="Photo url"
-                className="input input-bordered w-full"
+                className="input input-bordered w-full  text-white bg-[#252525]"
                 required
               />
               {urlError && <p className="text-red-500">{urlError}</p>}
             </label>
           </div>
           {/* movie name */}
-          <div className="form-control md:w-1/2 ml-4">
+          <div className="form-control w-full md:w-1/2 ">
             <label className="label">
-              <span className="label-text">Movie Name</span>
+              <span className="label-text text-white">Movie Name</span>
             </label>
             <label className="input-group">
               <input
@@ -117,7 +114,7 @@ const AddMovie = () => {
                 name="name"
                 id=""
                 placeholder="Movie Title"
-                className="input input-bordered w-full"
+                className="input input-bordered w-full text-white bg-[#252525]"
                 required
               />
               {nameError && <p className="text-red-500">{nameError}</p>}
@@ -125,33 +122,43 @@ const AddMovie = () => {
           </div>
         </div>
         {/* from row 2*/}
-        <div className="md:flex">
+        <div className="flex flex-col md:flex-row gap-4">
           {/* genre */}
-          <div className="form-control md:w-1/2">
+          <div className="form-control w-full md:w-1/2">
             <label className="label">
-              <span className="label-text">Genre</span>
+              <span className="label-text text-white">Genre</span>
             </label>
             <label className="input-group">
               <select
                 name="genre"
                 id=""
-                className="input input-bordered w-full"
+                className="input input-bordered w-full text-white bg-[#252525]"
               >
                 <option value="" disabled>
                   Select a Genre
                 </option>
-                <option value="Comedy">Comedy</option>
-                <option value="Romantic">Romantic</option>
-                <option value="Horror">Horror</option>
-                <option value="Thrilar">Thrilar</option>
-                <option value="Action">Action</option>
+                <option className="text-white" value="Comedy">
+                  Comedy
+                </option>
+                <option className="text-white" value="Romantic">
+                  Romantic
+                </option>
+                <option className="text-white" value="Horror">
+                  Horror
+                </option>
+                <option className="text-white" value="Thrilar">
+                  Thrilar
+                </option>
+                <option className="text-white" value="Action">
+                  Action
+                </option>
               </select>
             </label>
           </div>
           {/* duration */}
-          <div className="form-control w-1/2 ml-4">
+          <div className="form-control w-full md:w-1/2">
             <label className="label">
-              <span className="label-text">Duration</span>
+              <span className="label-text text-white">Duration</span>
             </label>
             <label className="input-group">
               <input
@@ -159,44 +166,58 @@ const AddMovie = () => {
                 name="duration"
                 id=""
                 placeholder="Duration"
-                className="input input-bordered w-full"
+                className="input input-bordered w-full text-white bg-[#252525]"
                 required
               />
               {durationError && <p className="text-red-500">{durationError}</p>}
             </label>
           </div>
         </div>
+        {/* from row 3*/}
+        <div className="flex flex-col md:flex-row gap-4 mb-8">
         {/* relese year */}
-        <div className="md:flex mb-8">
-          <div className="form-control w-1/2">
+          <div className="form-control w-full md:w-1/2">
             <label className="label">
-              <span className="label-text">Release Year</span>
+              <span className="label-text text-white">Release Year</span>
             </label>
             <label className="input-group">
               <select
                 name="releaseYear"
                 id=""
-                className="input input-bordered w-full"
+                className="input input-bordered w-full text-white bg-[#252525]"
               >
-                <option value="" disabled>
+                <option className="" value="" disabled>
                   Release Year
                 </option>
-                <option value="2024">2024</option>
-                <option value="2023">2023</option>
-                <option value="2022">2022</option>
-                <option value="2021">2021</option>
-                <option value="2020">2020</option>
+                <option className="text-white" value="2024">
+                  2024
+                </option>
+                <option className="text-white" value="2023">
+                  2023
+                </option>
+                <option className="text-white" value="2022">
+                  2022
+                </option>
+                <option className="text-white" value="2021">
+                  2021
+                </option>
+                <option className="text-white" value="2020">
+                  2020
+                </option>
               </select>
             </label>
           </div>
-          {/* from row 3*/}
-          <div className="form-control w-1/2 ml-4">
             {/* summary */}
+          <div className="form-control w-full md:w-1/2 ">
             <label className="label">
-              <span className="label-text">Summary</span>
+              <span className="label-text text-white">Summary</span>
             </label>
             <label className="input-group">
-              <textarea name="summary" id=""></textarea>
+              <textarea
+                className="bg-[#252525] text-white textarea textarea-bordered textarea-lg w-full max-w-xs"
+                name="summary"
+                id=""
+              ></textarea>
               {summaryError && <p className="text-red-500">{summaryError}</p>}
             </label>
           </div>
@@ -214,7 +235,7 @@ const AddMovie = () => {
         <input
           type="submit"
           value="Add Movie"
-          className="btn btn-block btn-neutral"
+          className="btn btn-block border-none text-[#0E0E0E] bg-[#FFD700] hover:bg-[#E6C200] transition-transform transform hover:scale-105"
           name=""
           id=""
         />

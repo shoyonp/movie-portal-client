@@ -8,11 +8,11 @@ const ErrorPage = () => {
       id="error-page"
     >
       <div>
-        <h1>Oops!</h1>
-        <h1>{error.status}</h1>
-        <p>Sorry, an unexpected error has occurred.</p>
+        <h1 className="text-white">Oops!</h1>
+        <h1 className="text-white">{error.status}</h1>
+        <p className="text-white">Sorry, an unexpected error has occurred.</p>
         <p>
-          <i>{error.statusText || error.message}</i>
+          <i className="text-white">{error.statusText || error.message}</i>
         </p>
         <Link className="btn" to="/">
           Go to home

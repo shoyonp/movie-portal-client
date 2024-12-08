@@ -3,18 +3,20 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useLoaderData } from "react-router-dom";
 import Card from "../components/Card";
+import Section2 from "../components/section2";
 
 const HomeLayout = () => {
   const movies = useLoaderData();
   return (
     <div>
-      <nav className="mb-10 ">
+      <nav className="">
         <Navbar></Navbar>
       </nav>
-      <section className="mb-10">
+      <section className="">
         <Banner></Banner>
       </section>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-11/12 mx-auto my-10">
+      <Section2></Section2> 
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-11/12 mx-auto mb-10">
         {movies?.map((movie) => (
           <Card key={movie._id} movie={movie}></Card>
         ))}

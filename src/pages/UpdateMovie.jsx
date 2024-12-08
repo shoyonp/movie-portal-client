@@ -82,13 +82,13 @@ const UpdateMovie = () => {
   };
 
   return (
-    <div className="bg-[#F4F3F0] p-24">
+    <div className="bg-[#F4F3F0] p-10 md:p-24 ">
       <h2 className="text-2xl font-bold">Update Movie</h2>
       <form onSubmit={handleUpdateMovie}>
         {/* from row 1*/}
-        <div className="md:flex">
+        <div className="flex flex-col md:flex-row gap-4">
           {/* movie poster */}
-          <div className="form-control md:w-1/2">
+          <div className="form-control w-full md:w-1/2">
             <label className="label">
               <span className="label-text">Movie Poster</span>
             </label>
@@ -105,7 +105,7 @@ const UpdateMovie = () => {
             </label>
           </div>
           {/* movie name */}
-          <div className="form-control md:w-1/2 ml-4">
+          <div className="form-control w-full md:w-1/2">
             <label className="label">
               <span className="label-text">Movie Name</span>
             </label>
@@ -123,7 +123,7 @@ const UpdateMovie = () => {
           </div>
         </div>
         {/* from row 2*/}
-        <div className="md:flex">
+        <div className="flex flex-col md:flex-row gap-4">
           {/* genre */}
           <div className="form-control md:w-1/2">
             <label className="label">
@@ -147,7 +147,7 @@ const UpdateMovie = () => {
             </label>
           </div>
           {/* duration */}
-          <div className="form-control w-1/2 ml-4">
+          <div className="form-control w-full md:w-1/2">
             <label className="label">
               <span className="label-text">Duration</span>
             </label>
@@ -164,9 +164,10 @@ const UpdateMovie = () => {
             </label>
           </div>
         </div>
+        {/* from row 3*/}
+        <div className="flex flex-col md:flex-row gap-4 mb-8">
         {/* relese year */}
-        <div className="md:flex mb-8">
-          <div className="form-control w-1/2">
+          <div className="form-control w-full md:w-1/2">
             <label className="label">
               <span className="label-text">Release Year</span>
             </label>
@@ -187,14 +188,14 @@ const UpdateMovie = () => {
               </select>
             </label>
           </div>
-          {/* from row 3*/}
-          <div className="form-control w-1/2 ml-4">
+          
+          <div className="form-control w-full md:w-1/2">
             {/* summary */}
             <label className="label">
               <span className="label-text">Summary</span>
             </label>
             <label className="input-group">
-              <textarea name="summary" id=""></textarea>
+              <textarea className="textarea textarea-bordered textarea-lg w-full max-w-xs" name="summary" id=""></textarea>
               {summaryError && <p className="text-red-500">{summaryError}</p>}
             </label>
           </div>
@@ -212,7 +213,7 @@ const UpdateMovie = () => {
         <input
           type="submit"
           value="Update Movie"
-          className="btn btn-block btn-neutral"
+          className="btn btn-block btn-neutral transition-transform transform hover:scale-105"
           name=""
           id=""
         />

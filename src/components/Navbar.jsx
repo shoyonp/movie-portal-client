@@ -5,27 +5,32 @@ import { FaUser } from "react-icons/fa";
 
 const Navbar = () => {
   const { user, userLogOut } = useContext(AuthContext);
+  // console.log(user.email);
   const links = (
     <>
-      <NavLink to="/">
-        <li>Home</li>
-      </NavLink>
-      <NavLink to="allmovies">
-        <li>All Movies</li>
-      </NavLink>
-      <NavLink to="addmovie">
-        <li>Add Movie</li>
-      </NavLink>
-      <NavLink to="myfavorite">
-        <li>My Favorites</li>
-      </NavLink>
-      <NavLink to="new">
-        <li>New</li>
-      </NavLink>
+      <li className="hover:text-[#F9A826]">
+        <NavLink to="/">Home</NavLink>
+      </li>
+
+      <li className="hover:text-[#F9A826]">
+        <NavLink to="allmovies">All Movies</NavLink>
+      </li>
+
+      <li className="hover:text-[#F9A826]">
+        <NavLink to="addmovie">Add Movie</NavLink>
+      </li>
+
+      <li className="hover:text-[#F9A826]">
+        <NavLink to="myfavorite">My Favorites</NavLink>
+      </li>
+
+      <li className="hover:text-[#F9A826]">
+        <NavLink to="new">New</NavLink>
+      </li>
     </>
   );
   return (
-    <div className="navbar bg-[#1A1A2E] text-white p-5">
+    <div className="navbar bg-[#202020] text-white p-5">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -46,15 +51,15 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow gap-4"
+            className="menu menu-sm dropdown-content bg-slate-900 rounded-box z-[1] mt-3 w-52 p-2 shadow gap-4"
           >
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <a className="btn btn-ghost text-xl text-[#FFD700]">Movie BD</a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 gap-5">{links}</ul>
+        <ul className="menu menu-horizontal px-1 text-[#E0E0E0]">{links}</ul>
       </div>
       <div className="navbar-end flex items-center gap-3">
         <label className="swap swap-rotate">
@@ -67,7 +72,7 @@ const Navbar = () => {
 
           {/* sun icon */}
           <svg
-            className="swap-off h-10 w-9 fill-current"
+            className="swap-off h-10 w-9 fill-current text-white"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
@@ -76,14 +81,14 @@ const Navbar = () => {
 
           {/* moon icon */}
           <svg
-            className="swap-on h-10 w-9 fill-current"
+            className="swap-on h-10 w-9 fill-current text-white"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
             <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
           </svg>
         </label>
-        <span className="mt-2">
+        <span className="">
           {user && user.email ? (
             <div className="avatar">
               <div className="ring-primary ring-offset-base-100 w-9 rounded-full ring ring-offset-2">
@@ -97,7 +102,7 @@ const Navbar = () => {
             </div>
           ) : (
             <span>
-              <FaUser className="text-black mr-2"></FaUser>
+              <FaUser className="mr-2 text-white text-2xl"></FaUser>
             </span>
           )}
         </span>
@@ -105,14 +110,14 @@ const Navbar = () => {
           {user && user.email ? (
             <button
               onClick={userLogOut}
-              className="btn border-none bg-green-700 text-white"
+              className="btn border-none bg-[#D72638] text-white"
             >
               Logout
             </button>
           ) : (
             <NavLink
               to="/auth/login"
-              className="btn border-none bg-green-700 text-white"
+              className="btn border-none bg-[#D72638] text-white"
             >
               Login
             </NavLink>

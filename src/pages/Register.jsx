@@ -14,7 +14,7 @@ const Register = () => {
     const photo = form.get("photo");
     const email = form.get("email");
     const password = form.get("password");
-    // console.log(name, photo, email, password);
+    // console.log({ name, photo, email, password });
     setError("");
     if (password.length < 6) {
       setError("Password should be 6 characters or longer");
@@ -35,6 +35,13 @@ const Register = () => {
         const user = result.user;
         setUser(user);
         console.log(user);
+        updateUserProfile({ displayName: name, photoURL: photo })
+          .then(() => {
+            navigate("/");
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       })
       .catch((error) => {
         console.log(error.message);
@@ -42,34 +49,12 @@ const Register = () => {
       });
   };
 
-  // const handleGoogleSignIn = () => {
-  //   signInWithPopup(auth, googleLogin())
-  //     .then((result) => {
-  //       const user = result.user;
-  //       setUser(user);
-  //       navigate("/");
-  //       console.log(user);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error.message);
-  //     });
-  // };
-
   return (
     <div className=" min-h-screen flex justify-center items-center">
       <div className="card bg-base-100 w-full max-w-lg shrink-0 shadow-2xl p-10">
         <h2 className="text-2xl font-semibold text-center">
           Register your account
         </h2>
-
-        {/* <div className="mt-5 mx-auto">
-            <button
-              onClick={handleGoogleSignIn}
-              className="btn bg-none text-green-600 "
-            >
-              <FcGoogle className="text-black"></FcGoogle> SignUp With Google
-            </button>
-          </div> */}
 
         <form onSubmit={handleSubmit} className="card-body">
           {/* name */}
@@ -125,15 +110,15 @@ const Register = () => {
             />
           </div>
           <div className="form-control mt-6">
-            <button className="btn bg-green-700 text-white ">Register</button>
+            <button className="btn bg-[#D72638] text-white">Register</button>
           </div>
         </form>
         {error && (
           <span className="text-sm text-red-600 text-center">{error}</span>
         )}
-        <p className="text-center font-semibold">
+        <p className="text-center font-semibold text-blue-900">
           Already Have An Account ?{" "}
-          <Link className="text-green-600" to="/auth/login">
+          <Link className="text-red-500" to="/auth/login">
             Login
           </Link>
         </p>

@@ -17,14 +17,14 @@ const AllMovies = () => {
 
   return (
     <div>
-      <div className="">
+      <div className="w-9/12 md:w-1/2 mx-auto">
         <input
           onChange={(e) => setSearch(e.target.value)}
           type="text"
           name=""
           id=""
           placeholder="Search here"
-          className=" p-3 border border-red-300 input-bordered w-11/12 mx-auto"
+          className=" p-3 rounded-lg w-full"
         />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-11/12 mx-auto my-10">

@@ -17,7 +17,15 @@ const MovieDetails = () => {
   }, [id, movies]);
 
   const { _id, name, photo, genre, duration, releaseYear, summary } = movie;
-  const userMovie = { name, photo, genre, duration, releaseYear, summary, email };
+  const userMovie = {
+    name,
+    photo,
+    genre,
+    duration,
+    releaseYear,
+    summary,
+    email,
+  };
   //   console.log(movie);
 
   const handleDelete = (_id) => {
@@ -74,30 +82,46 @@ const MovieDetails = () => {
   };
 
   return (
-    <div className="w-11/12 mx-auto">
-      <div className="card bg-base-100 shadow-xl">
+    <>
+      <div className="card card-side bg-[#1E1E2C] shadow-xl flex flex-col w-11/12  md:flex-row md:w-1/2 mx-auto">
         <figure>
-          <img src={photo} alt="Album" />
+          <img src={photo} alt="Movie" className="h-full" />
         </figure>
         <div className="card-body">
-          <h2 className="card-title">{name}</h2>
-          <h3>{genre}</h3>
-          <p>{duration}</p>
-          <div>{releaseYear}</div>
-          <div className="card-actions justify-end">{summary}</div>
-          <button onClick={() => handleDelete(_id)} className="btn btn-primary">
-            Delete Movie
-          </button>
+          <h2 className="card-title font-extrabold text-white text-2xl">{name}</h2>
+          <h3 className="font-medium  text-[#B3B3B3]">{genre}</h3>
+          <span className="font-medium text-[#B3B3B3]">{duration} min</span>
+          <div className="font-medium text-[#B3B3B3]">
+            Released on {releaseYear}
+          </div>
+          <p className="card-actions font-normal text-[#E0E0E0] items-center">
+            {summary}
+          </p>
+          <hr />
+          <div className="card-actions ">
+            <button
+              onClick={() => handleDelete(_id)}
+              className="btn w-full bg-[#E63946] border-none text-white hover:bg-[#C72A38] transition-all"
+            >
+              Delete Movie
+            </button>
+            <button
+              onClick={handleAddFavoriteMovie}
+              className="btn w-full bg-[#FFD700] border-none text-black hover:bg-[#F8D200] transition-all"
+            >
+              Add to Favorite
+            </button>
 
-          <button onClick={handleAddFavoriteMovie} className="btn btn-warning">Add to Favorite</button>
-
-
-          <Link to={`/updatemovie/${_id}`} className="btn btn-neutral">
-            Update Movie
-          </Link>
+            <Link
+              to={`/updatemovie/${_id}`}
+              className="btn w-full bg-[#6C757D] border-none text-white hover:bg-[#5A6268] transition-all"
+            >
+              Update Movie
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

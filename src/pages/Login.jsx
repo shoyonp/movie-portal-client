@@ -1,7 +1,7 @@
 import { useContext, useRef, useState } from "react";
 import { auth, AuthContext } from "../provider/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-// import { FcGoogle } from "react-icons/fc";
+import { FcGoogle } from "react-icons/fc";
 import { sendPasswordResetEmail, signInWithPopup } from "firebase/auth";
 
 const Login = () => {
@@ -96,23 +96,22 @@ const Login = () => {
             </label>
           </div>
           <div className="form-control mt-6">
-            <button className="btn bg-green-600 text-white ">Login</button>
+            <button className="btn bg-[#D72638] text-white ">Login</button>
           </div>
         </form>
         <h2 className="font-bold text-lg  divider text-center">Or</h2>
         <div className="mb-3 mx-auto">
           <button
             onClick={handleGoogleSignIn}
-            className="btn bg-none text-green-700 "
+            className="btn bg-none text-blue-900 "
           >
-            {/* <FcGoogle className="text-black"></FcGoogle> Login With Google */}
-            Login With Google
+            <FcGoogle className="text-black"></FcGoogle> Login With Google
           </button>
         </div>
 
         <p className="text-center font-semibold">
           Dont't Have An Account ?{" "}
-          <Link className="text-green-600" to="/auth/register">
+          <Link className="text-red-500" to="/auth/register">
             Register
           </Link>
         </p>
