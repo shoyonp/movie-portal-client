@@ -1,10 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import FavMovieCards from "../components/FavMovieCards";
+import UseTitle from "../components/UseTitle";
 
 const MyFavoriteMovies = () => {
   const { user } = useContext(AuthContext);
   const [favMovies, setFavMovies] = useState([]);
+  UseTitle("My Favorite");
   const email = user.email;
 
   console.log(favMovies);

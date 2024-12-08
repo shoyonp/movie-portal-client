@@ -1,12 +1,14 @@
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+import UseTitle from "../components/UseTitle";
 
 const Register = () => {
   const { creatNewUser, setUser, updateUserProfile } = useContext(AuthContext);
 
   const navigate = useNavigate();
   const [error, setError] = useState("");
+  UseTitle("Register");
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = new FormData(e.target);

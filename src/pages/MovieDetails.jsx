@@ -2,11 +2,13 @@ import { useContext, useEffect, useState } from "react";
 import { Link, useLoaderData, useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../provider/AuthProvider";
+import UseTitle from "../components/UseTitle";
 
 const MovieDetails = () => {
   const movies = useLoaderData();
   const { id } = useParams();
   const [movie, setMovie] = useState({});
+  UseTitle("Movie details")
   const { user } = useContext(AuthContext);
   const email = user.email;
   const navigate = useNavigate();

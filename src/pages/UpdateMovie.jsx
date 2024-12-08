@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { Rating } from "react-simple-star-rating";
 import Swal from "sweetalert2";
+import UseTitle from "../components/UseTitle";
 
 const UpdateMovie = () => {
   //   const [rating, setRating] = useState(0);
@@ -9,6 +10,7 @@ const UpdateMovie = () => {
   const [summaryError, setSummaryError] = useState("");
   const [durationError, setDurationError] = useState("");
   const [urlError, setUrlError] = useState("");
+  UseTitle("Update Movie");
   const movie = useLoaderData();
   console.log(movie);
   const { _id, name, photo, genre, duration, releaseYear, summary } = movie;
@@ -166,7 +168,7 @@ const UpdateMovie = () => {
         </div>
         {/* from row 3*/}
         <div className="flex flex-col md:flex-row gap-4 mb-8">
-        {/* relese year */}
+          {/* relese year */}
           <div className="form-control w-full md:w-1/2">
             <label className="label">
               <span className="label-text">Release Year</span>
@@ -188,14 +190,18 @@ const UpdateMovie = () => {
               </select>
             </label>
           </div>
-          
+
           <div className="form-control w-full md:w-1/2">
             {/* summary */}
             <label className="label">
               <span className="label-text">Summary</span>
             </label>
             <label className="input-group">
-              <textarea className="textarea textarea-bordered textarea-lg w-full max-w-xs" name="summary" id=""></textarea>
+              <textarea
+                className="textarea textarea-bordered textarea-lg w-full max-w-xs"
+                name="summary"
+                id=""
+              ></textarea>
               {summaryError && <p className="text-red-500">{summaryError}</p>}
             </label>
           </div>

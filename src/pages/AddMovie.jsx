@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Rating } from "react-simple-star-rating";
 import Swal from "sweetalert2";
+import UseTitle from "../components/UseTitle";
 
 const AddMovie = () => {
   //   const [rating, setRating] = useState(0);
@@ -8,6 +9,7 @@ const AddMovie = () => {
   const [summaryError, setSummaryError] = useState("");
   const [durationError, setDurationError] = useState("");
   const [urlError, setUrlError] = useState("");
+  UseTitle("Add Movies");
 
   const handleAddMovie = (event) => {
     event.preventDefault();
@@ -175,7 +177,7 @@ const AddMovie = () => {
         </div>
         {/* from row 3*/}
         <div className="flex flex-col md:flex-row gap-4 mb-8">
-        {/* relese year */}
+          {/* relese year */}
           <div className="form-control w-full md:w-1/2">
             <label className="label">
               <span className="label-text text-white">Release Year</span>
@@ -207,7 +209,7 @@ const AddMovie = () => {
               </select>
             </label>
           </div>
-            {/* summary */}
+          {/* summary */}
           <div className="form-control w-full md:w-1/2 ">
             <label className="label">
               <span className="label-text text-white">Summary</span>

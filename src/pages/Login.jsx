@@ -3,10 +3,12 @@ import { auth, AuthContext } from "../provider/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { sendPasswordResetEmail, signInWithPopup } from "firebase/auth";
+import UseTitle from "../components/UseTitle";
 
 const Login = () => {
   const { userLogin, setUser, googleLogin } = useContext(AuthContext);
   const [error, setError] = useState({});
+  UseTitle("Loign");
   const location = useLocation();
   const navigate = useNavigate();
   const emailRef = useRef();

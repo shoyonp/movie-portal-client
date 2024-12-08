@@ -1,11 +1,13 @@
 import { useLoaderData } from "react-router-dom";
 import Card from "../components/Card";
 import { useEffect, useState } from "react";
+import UseTitle from "../components/UseTitle";
 
 const AllMovies = () => {
-    const movies = useLoaderData();
+  const movies = useLoaderData();
   const [search, setSearch] = useState("");
   const [data, setData] = useState(movies);
+  UseTitle("All Movies");
 
   useEffect(() => {
     fetch(`http://localhost:5000/movies?search=${search}`)

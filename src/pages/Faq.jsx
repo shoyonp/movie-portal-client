@@ -1,4 +1,7 @@
+import UseTitle from "../components/UseTitle";
+
 const New = () => {
+  UseTitle("FAQ")
   return (
     <div className="w-9/12 mx-auto">
       <div className="bg-[#1E1E2C] text-white collapse collapse-arrow">
