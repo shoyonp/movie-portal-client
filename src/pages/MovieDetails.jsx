@@ -52,8 +52,8 @@ const MovieDetails = () => {
   };
 
   const handleAddFavoriteMovie = () => {
-    // user movie db
-    fetch("http://localhost:5000/userMovies", {
+    // user favorite movie db
+    fetch("http://localhost:5000/favMovies", {
       method: "POST",
       headers: {
         "content-type": "application/json",

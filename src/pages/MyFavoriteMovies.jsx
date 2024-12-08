@@ -4,9 +4,8 @@ import FavMovieCards from "../components/FavMovieCards";
 
 const MyFavoriteMovies = () => {
   const { user } = useContext(AuthContext);
-  const [favMovies, setFavmovies] = useState([]);
+  const [favMovies, setFavMovies] = useState([]);
   const email = user.email;
-  console.log(email);
 
   console.log(favMovies);
 
@@ -15,7 +14,7 @@ const MyFavoriteMovies = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        setFavmovies(data);
+        setFavMovies(data);
       });
   }, []);
 
@@ -24,7 +23,12 @@ const MyFavoriteMovies = () => {
       <h2 className="text-white text-4xl">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-11/12 mx-auto">
           {favMovies?.map((movie) => (
-            <FavMovieCards key={movie._id} movie={movie}></FavMovieCards>
+            <FavMovieCards
+              key={movie._id}
+              favMovies={favMovies}
+              setFavMovies={setFavMovies}
+              movie={movie}
+            ></FavMovieCards>
           ))}
         </div>
       </h2>
