@@ -1,9 +1,10 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { FaUser } from "react-icons/fa";
 
 const Navbar = () => {
+  // const [theme,setTheme] = useState("")
   const { user, userLogOut } = useContext(AuthContext);
   // console.log(user.email);
   const links = (
@@ -25,7 +26,7 @@ const Navbar = () => {
       </li>
 
       <li className="hover:text-[#F9A826]">
-        <NavLink to="new">New</NavLink>
+        <NavLink to="faq">FAQ</NavLink>
       </li>
     </>
   );

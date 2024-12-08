@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import HomeLayout from "../layouts/HomeLayout";
 import ErrorPage from "../pages/ErrorPage";
 import AllMovies from "../pages/AllMovies";
-import New from "../pages/New";
+import New from "../pages/Faq";
 import AuthLayout from "../layouts/AuthLayout";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
@@ -48,7 +48,7 @@ const router = createBrowserRouter([
           fetch(`http://localhost:5000/movies/${params.id}`),
       },
       {
-        path: "new",
+        path: "faq",
         element: <New></New>,
       },
       {
