@@ -101,20 +101,20 @@ const MovieDetails = () => {
           <div className="card-actions ">
             <button
               onClick={() => handleDelete(_id)}
-              className="btn w-full bg-[#E63946] border-none text-white hover:bg-[#C72A38] transition-all"
+              className="btn w-full bg-[#E63946] border-none text-white hover:bg-[#C72A38] transition-transform transform hover:scale-105"
             >
               Delete Movie
             </button>
             <button
               onClick={handleAddFavoriteMovie}
-              className="btn w-full bg-[#FFD700] border-none text-black hover:bg-[#F8D200] transition-all"
+              className="btn w-full bg-[#FFD700] border-none text-black hover:bg-[#F8D200] transition-transform transform hover:scale-105"
             >
               Add to Favorite
             </button>
 
             <Link
               to={`/updatemovie/${_id}`}
-              className="btn w-full bg-[#6C757D] border-none text-white hover:bg-[#5A6268] transition-all"
+              className="btn w-full bg-[#6C757D] border-none text-white hover:bg-[#5A6268] transition-transform transform hover:scale-105"
             >
               Update Movie
             </Link>

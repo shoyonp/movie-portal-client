@@ -52,7 +52,7 @@ const FavMovieCards = ({ movie, setFavMovies, favMovies }) => {
             <p className="text-gray-400 text-xs mt-1 mb-1">
               Released on {releaseYear}
             </p>
-            <button onClick={() => handleDeleteFav(_id)} className="btn btn-neutral">
+            <button onClick={() => handleDeleteFav(_id)} className="btn bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-white border-none hover:from-yellow-500 hover:via-orange-600 hover:to-red-600 ">
               Delete Favorite
             </button>
           </div>

@@ -18,7 +18,7 @@ const Card = ({ movie }) => {
               Duration: {duration} mins
             </p>
             <p className="text-gray-400 text-xs mt-1 mb-1">Released on {releaseYear}</p>
-            <Link to={`/detail/${movie._id}`} className="btn bg-neutral text-white border-none ">
+            <Link to={`/detail/${movie._id}`} className="btn bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-white border-none hover:from-yellow-500 hover:via-orange-600 hover:to-red-600 ">
               See Ditails
             </Link>
           </div>

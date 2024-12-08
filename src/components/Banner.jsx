@@ -14,7 +14,7 @@ const Banner = () => {
               wisecracks meet Wolverine's berserker rage in a chaotic showdown
               that forces them to decide: are they enemies or reluctant allies?
             </p>
-            <button className="text-white btn w-40 border-none bg-orange-600 ">
+            <button className="text-white btn w-40 border-none bg-red-600 transition-transform transform hover:scale-105">
               Watch Now
             </button>
           </div>
@@ -30,7 +30,7 @@ const Banner = () => {
               Taylor, must confront his fears and stop the terrifying predator
               before it wreaks havoc on the open seas.
             </p>
-            <button className="text-white btn w-40 border-none bg-orange-600 ">
+            <button className="text-white btn w-40 border-none bg-red-600 transition-transform transform hover:scale-105 ">
               Watch Now
             </button>
           </div>
@@ -49,7 +49,7 @@ const Banner = () => {
               Kong. Struggling to survive, the group discovers Kong is not their
               only threat on this mysterious and deadly island.
             </p>
-            <button className="text-white btn w-40 border-none bg-orange-600 ">
+            <button className="text-white btn w-40 border-none bg-red-600 transition-transform transform hover:scale-105">
               Watch Now
             </button>
           </div>
@@ -68,7 +68,7 @@ const Banner = () => {
               threatens to unleash a more dangerous force, pushing the two
               titans to a reluctant alliance.
             </p>
-            <button className="text-white btn w-40 border-none bg-orange-600 ">
+            <button className="text-white btn w-40 border-none bg-red-600 transition-transform transform hover:scale-105">
               Watch Now
             </button>
           </div>
