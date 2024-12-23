@@ -42,7 +42,7 @@ const MovieDetails = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/movies/${_id}`, {
+        fetch(`https://movie-portal-server-khaki.vercel.app/movies/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -63,7 +63,7 @@ const MovieDetails = () => {
 
   const handleAddFavoriteMovie = () => {
     // user favorite movie db
-    fetch("http://localhost:5000/favMovies", {
+    fetch("https://movie-portal-server-khaki.vercel.app/favMovies", {
       method: "POST",
       headers: {
         "content-type": "application/json",

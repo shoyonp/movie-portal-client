@@ -10,7 +10,7 @@ const AllMovies = () => {
   UseTitle("All Movies");
 
   useEffect(() => {
-    fetch(`http://localhost:5000/movies?search=${search}`)
+    fetch(`https://movie-portal-server-khaki.vercel.app/movies?search=${search}`)
       .then((res) => res.json())
       .then((data) => {
         setData(data);

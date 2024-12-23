@@ -17,7 +17,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <HomeLayout></HomeLayout>,
-    loader: () => fetch("http://localhost:5000/movies"),
+    loader: () => fetch("https://movie-portal-server-khaki.vercel.app/movies"),
     errorElement: <ErrorPage></ErrorPage>,
   },
   {
@@ -27,7 +27,7 @@ const router = createBrowserRouter([
       {
         path: "allmovies",
         element: <AllMovies></AllMovies>,
-        loader: () => fetch("http://localhost:5000/movies"),
+        loader: () => fetch("https://movie-portal-server-khaki.vercel.app/movies"),
       },
       {
         path: "addmovie",
@@ -45,7 +45,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/movies/${params.id}`),
+          fetch(`https://movie-portal-server-khaki.vercel.app/movies/${params.id}`),
       },
       {
         path: "faq",
@@ -66,7 +66,7 @@ const router = createBrowserRouter([
             <MovieDetails></MovieDetails>
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/movies"),
+        loader: () => fetch("https://movie-portal-server-khaki.vercel.app/movies"),
       },
     ],
   },

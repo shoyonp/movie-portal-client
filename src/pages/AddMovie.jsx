@@ -56,7 +56,7 @@ const AddMovie = () => {
     }
 
     const newMovie = { name, photo, genre, duration, releaseYear, summary };
-    fetch("http://localhost:5000/movies", {
+    fetch("https://movie-portal-server-khaki.vercel.app/movies", {
       method: "POST",
       headers: {
         "content-type": "application/json",

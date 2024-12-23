@@ -12,7 +12,7 @@ const MyFavoriteMovies = () => {
   console.log(favMovies);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/favMovies/${email}`)
+    fetch(`https://movie-portal-server-khaki.vercel.app/favMovies/${email}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
