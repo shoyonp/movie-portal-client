@@ -1,16 +1,27 @@
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import { Outlet } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
+import Banner from "../components/Banner";
+import Section2 from "../components/section2";
+import Card from "../components/Card";
+import Subscription from "../components/Subscription";
+import BlogSection from "../components/BlogSection";
 
 const Home = () => {
-
-    return (
-        <div>
-            <div className=""><Navbar></Navbar></div>
-            <div className="my-10"><Outlet></Outlet></div>
-            <Footer></Footer>
-        </div>
-    );
+  const movies = useLoaderData();
+  return (
+    <div className="pt-9">
+      <section className="">
+        <Banner></Banner>
+      </section>
+     <section className="mb-4"> <Section2></Section2></section>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-11/12 mx-auto mb-2">
+        {movies?.slice(0, 6)?.map((movie) => (
+          <Card key={movie._id} movie={movie}></Card>
+        ))}
+      </div>
+      <BlogSection></BlogSection>
+      <Subscription></Subscription>
+    </div>
+  );
 };
 
 export default Home;

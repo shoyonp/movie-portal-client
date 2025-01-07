@@ -56,7 +56,7 @@ const Login = () => {
   };
 
   return (
-    <div className=" min-h-screen flex justify-center items-center">
+    <div className="min-h-screen flex justify-center items-center pt-11">
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl p-10">
         <h2 className="text-2xl font-semibold text-center">
           Login your account
@@ -113,7 +113,7 @@ const Login = () => {
 
         <p className="text-center font-semibold">
           Dont't Have An Account ?{" "}
-          <Link className="text-red-500" to="/auth/register">
+          <Link className="text-red-500" to="/register">
             Register
           </Link>
         </p>

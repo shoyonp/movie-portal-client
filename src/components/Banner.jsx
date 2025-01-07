@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
+
 const Banner = () => {
   return (
     <>
-      <div className="carousel w-full h-[500px] md:h-[600px]">
+      <div className="carousel mt-10 w-full h-[500px] md:h-[600px]">
         <div id="item1" className="carousel-item bg-bannerOne w-full bg-cover">
           <div className="flex flex-col my-auto text-left pl-5">
             <h1 className="text-4xl text-white font-extrabold">
@@ -14,9 +16,11 @@ const Banner = () => {
               wisecracks meet Wolverine's berserker rage in a chaotic showdown
               that forces them to decide: are they enemies or reluctant allies?
             </p>
-            <button className="text-white btn w-40 border-none bg-red-600 transition-transform transform hover:scale-105">
-              Watch Now
-            </button>
+            <Link to="/allmovies">
+              <button className="text-white btn w-40 border-none bg-red-600 hover:bg-red-700 transition-transform transform hover:scale-105 ">
+                Watch Now
+              </button>
+            </Link>
           </div>
         </div>
         <div id="item2" className="carousel-item bg-bannerTwo w-full bg-cover">
@@ -30,9 +34,11 @@ const Banner = () => {
               Taylor, must confront his fears and stop the terrifying predator
               before it wreaks havoc on the open seas.
             </p>
-            <button className="text-white btn w-40 border-none bg-red-600 transition-transform transform hover:scale-105 ">
-              Watch Now
-            </button>
+            <Link to="/allmovies">
+              <button className="text-white btn w-40 border-none bg-red-600 hover:bg-red-700 transition-transform transform hover:scale-105 ">
+                Watch Now
+              </button>
+            </Link>
           </div>
         </div>
         <div
@@ -49,9 +55,11 @@ const Banner = () => {
               Kong. Struggling to survive, the group discovers Kong is not their
               only threat on this mysterious and deadly island.
             </p>
-            <button className="text-white btn w-40 border-none bg-red-600 transition-transform transform hover:scale-105">
-              Watch Now
-            </button>
+            <Link to="/allmovies">
+              <button className="text-white btn w-40 border-none bg-red-600 hover:bg-red-700 transition-transform transform hover:scale-105 ">
+                Watch Now
+              </button>
+            </Link>
           </div>
         </div>
         <div
@@ -68,9 +76,11 @@ const Banner = () => {
               threatens to unleash a more dangerous force, pushing the two
               titans to a reluctant alliance.
             </p>
-            <button className="text-white btn w-40 border-none bg-red-600 transition-transform transform hover:scale-105">
-              Watch Now
-            </button>
+            <Link to="/allmovies">
+              <button className="text-white btn w-40 border-none bg-red-600 hover:bg-red-700 transition-transform transform hover:scale-105 ">
+                Watch Now
+              </button>
+            </Link>
           </div>
         </div>
       </div>

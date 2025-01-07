@@ -52,7 +52,7 @@ const Register = () => {
   };
 
   return (
-    <div className=" min-h-screen flex justify-center items-center">
+    <div className=" min-h-screen flex justify-center items-center pt-16">
       <div className="card bg-base-100 w-full max-w-lg shrink-0 shadow-2xl p-10">
         <h2 className="text-2xl font-semibold text-center">
           Register your account
@@ -120,7 +120,7 @@ const Register = () => {
         )}
         <p className="text-center font-semibold text-blue-900">
           Already Have An Account ?{" "}
-          <Link className="text-red-500" to="/auth/login">
+          <Link className="text-red-500" to="/login">
             Login
           </Link>
         </p>

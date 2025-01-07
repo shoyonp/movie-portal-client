@@ -21,7 +21,7 @@ const MyFavoriteMovies = () => {
   }, []);
 
   return (
-    <div>
+    <div className="pt-28 pb-10">
       <h2 className="text-white text-4xl">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-11/12 mx-auto">
           {favMovies?.map((movie) => (

@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { FaUser } from "react-icons/fa";
 
@@ -17,13 +17,21 @@ const Navbar = () => {
         <NavLink to="allmovies">All Movies</NavLink>
       </li>
 
-      <li className="hover:text-[#F9A826]">
-        <NavLink to="addmovie">Add Movie</NavLink>
-      </li>
+      {user && user.email ? (
+        <li className="hover:text-[#F9A826]">
+          <NavLink to="addmovie">Add Movie</NavLink>
+        </li>
+      ) : (
+        ""
+      )}
 
-      <li className="hover:text-[#F9A826]">
-        <NavLink to="myfavorite">My Favorites</NavLink>
-      </li>
+      {user && user.email ? (
+        <li className="hover:text-[#F9A826]">
+          <NavLink to="myfavorite">My Favorites</NavLink>
+        </li>
+      ) : (
+        ""
+      )}
 
       <li className="hover:text-[#F9A826]">
         <NavLink to="faq">FAQ</NavLink>
@@ -31,7 +39,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar bg-[#202020] text-white p-5">
+    <div className="navbar fixed z-10 top-0 bg-[#202020] text-white py-3 px-5 mt-0">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -57,7 +65,7 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl text-[#FFD700]">Movie BD</a>
+        <Link to="/"><button className=" text-xl text-[#FFD700] font-semibold">Movie BD</button></Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 text-[#E0E0E0]">{links}</ul>
@@ -116,12 +124,20 @@ const Navbar = () => {
               Logout
             </button>
           ) : (
-            <NavLink
-              to="/auth/login"
-              className="btn border-none bg-[#D72638] text-white"
-            >
-              Login
-            </NavLink>
+            <div >
+              <NavLink
+                to="/login"
+                className="btn border-none bg-[#D72638] text-white "
+              >
+                Login
+              </NavLink>
+              {/* <NavLink
+                to="/auth/register"
+                className="btn border-none bg-[#D72638] text-white"
+              >
+                Sign Up
+              </NavLink> */}
+            </div>
           )}
         </div>
       </div>

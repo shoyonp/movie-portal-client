@@ -3,7 +3,6 @@ import HomeLayout from "../layouts/HomeLayout";
 import ErrorPage from "../pages/ErrorPage";
 import AllMovies from "../pages/AllMovies";
 import New from "../pages/Faq";
-import AuthLayout from "../layouts/AuthLayout";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Home from "../pages/Home";
@@ -17,17 +16,19 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <HomeLayout></HomeLayout>,
-    loader: () => fetch("https://movie-portal-server-khaki.vercel.app/movies"),
     errorElement: <ErrorPage></ErrorPage>,
-  },
-  {
-    path: "/",
-    element: <Home></Home>,
     children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+        loader: () =>
+          fetch("https://movie-portal-server-khaki.vercel.app/movies"),
+      },
       {
         path: "allmovies",
         element: <AllMovies></AllMovies>,
-        loader: () => fetch("https://movie-portal-server-khaki.vercel.app/movies"),
+        loader: () =>
+          fetch("https://movie-portal-server-khaki.vercel.app/movies"),
       },
       {
         path: "addmovie",
@@ -45,7 +46,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`https://movie-portal-server-khaki.vercel.app/movies/${params.id}`),
+          fetch(
+            `https://movie-portal-server-khaki.vercel.app/movies/${params.id}`
+          ),
       },
       {
         path: "faq",
@@ -66,24 +69,33 @@ const router = createBrowserRouter([
             <MovieDetails></MovieDetails>
           </PrivateRoute>
         ),
-        loader: () => fetch("https://movie-portal-server-khaki.vercel.app/movies"),
+        loader: () =>
+          fetch("https://movie-portal-server-khaki.vercel.app/movies"),
       },
-    ],
-  },
-  {
-    path: "auth",
-    element: <AuthLayout></AuthLayout>,
-    children: [
       {
-        path: "/auth/login",
+        path: "login",
         element: <Login></Login>,
       },
       {
-        path: "/auth/register",
+        path: "register",
         element: <Register></Register>,
       },
     ],
   },
+  // {
+  //   path: "auth",
+  //   element: <AuthLayout></AuthLayout>,
+  //   children: [
+  //     {
+  //       path: "/auth/login",
+  //       element: <Login></Login>,
+  //     },
+  //     {
+  //       path: "/auth/register",
+  //       element: <Register></Register>,
+  //     },
+  //   ],
+  // },
 ]);
 
 export default router;

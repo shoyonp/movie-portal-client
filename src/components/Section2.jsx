@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Section2 = () => {
     return (
@@ -12,8 +13,8 @@ const Section2 = () => {
         Embark on an unforgettable journey filled with mystery, action, and drama. Watch the movie that everyone's talking about.
       </p>
       <div className="flex justify-center space-x-4">
-        <button className="btn btn-error text-white">Watch Now</button>
-        <button className="btn btn-success text-white">Learn More</button>
+        <Link to="/allmovies"><button className="btn btn-error text-white">Watch Now</button></Link>
+        <Link to="/faq"><button className="btn btn-success text-white">Learn More</button></Link>
       </div>
     </div>
   </div>
