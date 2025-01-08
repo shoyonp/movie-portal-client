@@ -37,7 +37,9 @@ How to run in local machine
 - git clone
 - npm install
 - and you need firebase variable keys
+- and the server
 
+Here is the server repo link : https://github.com/shoyonp/movie-portal-server/tree/main
 This websites live link : https://movie-portal-c9fe0.web.app/
 
 
